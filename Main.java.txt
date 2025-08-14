@@ -1,0 +1,35 @@
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+
+        // Adding some books
+        library.addBook(new Book("Java Basics", "John Doe"));
+        library.addBook(new Book("OOP in Java", "Jane Smith"));
+        library.addBook(new Book("Data Structures", "Robert King"));
+
+        // Creating people
+        Member member = new Member("Alice");
+        Librarian librarian = new Librarian("Mr. Brown");
+
+        // Display roles
+        member.displayRole();
+        librarian.displayRole();
+
+        // Show books
+        library.showBooks();
+
+        // Borrow and return a book
+        Book bookToBorrow = library.findBook("Java Basics");
+        if (bookToBorrow != null) {
+            bookToBorrow.borrowBook();
+        }
+
+        library.showBooks();
+
+        if (bookToBorrow != null) {
+            bookToBorrow.returnBook();
+        }
+
+        library.showBooks();
+    }
+}
